@@ -1,0 +1,47 @@
+<div class="home-main" ng-init='$ctrl.callOnLoad()'>
+  <div class="header">
+    <div class="cancel-button" ng-click="$ctrl.cancel()">
+      <div class="cancel-button__text">Cancel</div>
+    </div>
+  </div>
+  <div class="date-container">
+    <div class="date-container__time">{{$ctrl.urlData.timeStart}}-</div>
+    <div class="date-container__date">{{$ctrl.urlData.date}}</div>
+  </div>
+  <div class="search-container">
+    <div class="search-button">
+      <div class="search-button__text">Text</div>
+    </div>
+    <div class="search-container__input">
+      <input type="text" placeholder="Search user">
+      <img src="images/glass.png">
+    </div>
+  </div>
+  <div class="user-container">
+    <div class="user-container__title">Recent user</div>
+    <div class="list-users">
+      <div class="person" ng-repeat="item in $ctrl.resentUsers">
+        <div class="person__avatar">
+          <img ng-src="{{item.photo}}" alt="avatar">
+        </div>
+        <div class="person__text">{{item.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="user-container user-container--simple">
+    <div class="user-container__title">Simple user</div>
+    <div class="list-users">
+      <div class="person" ng-repeat="item in $ctrl.simpleUsers">
+        <div class="person__avatar">
+          <img ng-src="{{item.photo}}" alt="avatar">
+        </div>
+        <div class="person__text">{{item.name}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="self-button">
+    <div class="self-button__text">Self button</div>
+  </div>
+</div>

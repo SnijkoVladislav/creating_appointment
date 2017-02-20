@@ -1,0 +1,183 @@
+@mixin WH($width, $height) {
+    width: $width;
+    height: $height;
+}
+@mixin inlineMidle() {
+    display: inline-block;
+    vertical-align: middle;
+}
+@mixin before() {
+    &:before {
+        content: '';
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+html {
+    @include WH(100%,100%);
+}
+
+body {
+    @include WH(100%,100%);
+    background: gray;
+    margin: 0;
+}
+
+.ng-scope {
+    height: 100%;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.home-main {
+    @include WH(100%,100%);
+    background: white;
+
+    .header {
+        @include WH(100%,10%);
+        background: #f2f2f2;
+        border-bottom: 1px solid #7f7f7f;
+        align-items: center;
+        display: flex;
+        padding-right: 2%;
+
+        .cancel-button {
+            @include WH(25%,80%);
+            @include before();
+            background: red;
+            margin-left: auto;
+            font-size: 18px;
+            text-align: center;
+
+            &__text {
+                @include inlineMidle();
+                font-size: 18px;
+                color: white;
+            }
+        }
+    }
+
+    .date-container {
+        @include WH(100%,6%);
+        background: #bfbfbf;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+
+        &__time {
+            color: white;
+            font-size: 18px;
+        }
+
+        &__date {
+            color: white;
+            font-size: 18px;
+        }
+    }
+
+    .search-container {
+        @include WH(100%,10%);
+        background: #d9d9d9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3%;
+
+        .search-button {
+            @include WH(20%,70%);
+            @include before();
+            background: #a6a6a6;
+            text-align: center;
+
+            &__text {
+                @include inlineMidle();
+                font-size: 18px;
+                color: white;
+            }
+        }
+
+        &__input {
+            @include WH(60%,70%);
+            position: relative;
+
+            input {
+                @include WH(100%,100%);
+                padding: 0 0 0 10px;
+                border: 1px solid #7f7f7f;
+                font-size: 18px;
+                color: #d9d9d9;
+            }
+
+            img {
+                @include WH(8%,50%);
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translate(-50%,-50%);
+            }
+        }
+    }
+
+    .user-container {
+        text-align: center;
+        background: #bdd7ee;
+        font-size: 18px;
+
+        &--simple {
+            background: #d9d9d9;
+        }
+
+        &__title {
+            padding-top: 10px;
+            width: 100%;
+            color: black;
+        }
+
+        .list-users {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+
+            .person {
+                max-width: 75px;
+                max-height: 93px;
+                margin: 10px;
+                overflow: hidden;
+
+                &__avatar {
+                    @include WH(75px,75px);
+                    border-radius: 50%;
+
+                    img {
+                        @include WH(100%,100%);
+                        border-radius: 50%;
+                    }
+                }
+
+                &__text {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .self-button {
+        @include WH(100%,8%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #85fb65;
+
+        &__text {
+            font-size: 18px;
+            color: black;
+        }
+    }
+}

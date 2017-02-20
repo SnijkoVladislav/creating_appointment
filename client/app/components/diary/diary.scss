@@ -1,0 +1,30 @@
+@mixin WH($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+html {
+    @include WH(100%,100%);
+}
+
+body {
+    @include WH(100%,100%);
+    background: white;
+    margin: 0;
+}
+
+.ng-scope {
+    height: 100%;
+}
+
+.diary-main {
+    @include WH(100%,100%);
+    display: flex;
+    align-items: center;
+    background: white;
+    justify-content: center;
+    &__title {
+        font-size: 46px;
+        color: black;
+    }
+}
